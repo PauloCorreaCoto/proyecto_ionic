@@ -16,14 +16,15 @@ import {
     IonItem,
     IonFooter
 } from "@ionic/react";
-import UseApi from "./UseApi";
-import "../pages/home/Home.css";
+import UseApi from "../UseApi";
+import "../../pages/platesHome/PlateHome.css";
 
-const PutForm: React.FC = () => {
+
+const PutFormPlates: React.FC = () => {
     
     const [nameEdit, setNameEdit] = useState("");
     const [idEdit, setIdEdit] = useState("");
-    const { data, UpdateData } = UseApi(`${process.env.REACT_APP_API_URL}/clients`); ; 
+    const { data, UpdateData } = UseApi(`${process.env.REACT_APP_API_URL}/plates`); ; 
 
     const handleEdit = () => {
         UpdateData(`${idEdit}`, {name: nameEdit});
@@ -39,7 +40,7 @@ const PutForm: React.FC = () => {
                     className="Movie_Inputs"
                     type="text"
                     value={idEdit}
-                    placeholder='Id del cliente'
+                    placeholder='Id del plato'
                     onChange={(e) => setIdEdit(e.target.value)}                   
                     />
                     
@@ -47,7 +48,7 @@ const PutForm: React.FC = () => {
                         className="Movie_Inputs"
                         type="text"
                         value={nameEdit}
-                        placeholder="Nombre del cliente"
+                        placeholder="Nombre del plato"
                         onChange={(e) => setNameEdit(e.target.value)}                    
                     />
     
@@ -58,6 +59,4 @@ const PutForm: React.FC = () => {
         )
     };
 
-
-    
-    export default PutForm;
+    export default PutFormPlates;

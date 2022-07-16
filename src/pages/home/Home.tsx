@@ -11,14 +11,22 @@ import {
     IonContent,
     IonButton,
     IonTitle,
-    IonInput
+    IonInput,
+    IonLabel,
+    IonTabBar,
+    IonRouterOutlet,
+    IonTabButton
 } from "@ionic/react"
 import UseApi from "../../components/UseApi";
 import "./Home.css";
 import DeleteForm from "../../components/DeleteForm"
 import PutForm from "../../components/PutForm";
 import PostForm from "../../components/PostForm";
+import { IonReactRouter } from "@ionic/react-router";
+import { Route } from "react-router";
+import PlateHome from "../platesHome/PlateHome";
 
+const Settings = () => <IonPage>Settings</IonPage>;
 
 
 const Home: React.FC = () => {
@@ -42,6 +50,7 @@ const Home: React.FC = () => {
                     <PutForm />                
                 <IonCardTitle> Delete </IonCardTitle>
                     <DeleteForm />
+
             <IonContent>
                 {data?.map((client: any) => {
                     return (
@@ -52,6 +61,7 @@ const Home: React.FC = () => {
                     </IonCard>
                     )
                 })}
+            
 
             </IonContent>
 

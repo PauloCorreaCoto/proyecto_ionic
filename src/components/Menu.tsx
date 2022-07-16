@@ -8,6 +8,7 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
+  IonTabBar,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
@@ -23,20 +24,20 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
+    title: 'Home',
+    url: '/Home',
     iosIcon: mailOutline,
     mdIcon: mailSharp
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
+    title: 'PlateHome',
+    url: '/PlateHome',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
+    title: 'FrontPage',
+    url: '/FrontPage',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },

@@ -76,5 +76,7 @@ import "../pages/home/Home.css";
             </IonCardHeader>
            )
         }
+
+        
     
     export default PostData;

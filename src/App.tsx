@@ -25,7 +25,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import PlateHome from './pages/platesHome/PlateHome';
 import Home from './pages/home/Home';
-import FrontPage from './pages/frontPage/FrontPage';
+
 
 setupIonicReact();
 

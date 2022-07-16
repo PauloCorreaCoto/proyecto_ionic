@@ -50,17 +50,7 @@ const Home: React.FC = () => {
                     <PutForm />                
                 <IonCardTitle> Delete </IonCardTitle>
                     <DeleteForm />
-            <IonReactRouter>
-                <IonRouterOutlet>
-                <Route path="/PlateHome" exact={true}>
-                <PlateHome />
-                </Route>
-                </IonRouterOutlet>
-            
-                <IonButton routerLink={'/PlateHome'}>PlateHome</IonButton>
 
-  
-            </IonReactRouter>
             <IonContent>
                 {data?.map((client: any) => {
                     return (

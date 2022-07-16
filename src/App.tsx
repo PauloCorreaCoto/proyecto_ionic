@@ -25,6 +25,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import PlateHome from './pages/platesHome/PlateHome';
 import Home from './pages/home/Home';
+import FrontPage from './pages/frontPage/FrontPage';
 
 setupIonicReact();
 
@@ -35,8 +36,8 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/inicio" exact={true}>
-              <Redirect to="/page/PlateHome" />
+            <Route path="/page/inbox" exact={true}>
+              <Redirect to="/page/inbox" />
             </Route>
             <Route path="/page/:name" exact={true}>
               <Page />
@@ -47,6 +48,8 @@ const App: React.FC = () => {
             <Route path="/Home" exact={true}>
               <Home />
             </Route>
+
+            
 
           </IonRouterOutlet>
         </IonSplitPane>

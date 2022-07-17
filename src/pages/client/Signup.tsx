@@ -29,7 +29,7 @@ import PlateHome from "../platesHome/PlateHome";
 const Settings = () => <IonPage>Settings</IonPage>;
 
 
-const Client: React.FC = () => {
+const Signup: React.FC = () => {
     const {data, refetch} = UseApi(`${process.env.REACT_APP_API_URL}/clients`);
 
     if(!data){
@@ -57,4 +57,4 @@ const Client: React.FC = () => {
 
 };
 
-export default Client;
+export default Signup;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
     IonPage,
     IonHeader,
@@ -14,10 +14,11 @@ import {
     IonLabel,
     IonInput,
     IonItem,
-    IonFooter
+    IonFooter,
+    NavContext
 } from "@ionic/react";
 import UseApi from "./UseApi";
-import "../pages/home/Home.css";
+import "../pages/client/Client.css";
 
 
     const PostData: React.FC = () => {
@@ -26,6 +27,7 @@ import "../pages/home/Home.css";
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
         const [direction, setDirection] = useState("");
+        const { navigate } = useContext(NavContext);
         const handleSubmit = () => {
             try {
                 refetch({name: name, email: email,password: password, direction: direction})
@@ -35,8 +37,10 @@ import "../pages/home/Home.css";
                 setDirection("");
             } catch (error) {
                 console.log(error);
-            }            
+            }
+            navigate('/login')            
         }
+
         return(
             <IonCardHeader>
                 <form onSubmit={handleSubmit} >
@@ -70,7 +74,7 @@ import "../pages/home/Home.css";
                     onChange={(e) => setDirection(e.target.value)}                
                     />
     
-                    <IonButton type="submit">Agregar</IonButton>
+                    <IonButton type="submit"> Register</IonButton>
     
                 </form>
             </IonCardHeader>

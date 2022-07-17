@@ -17,7 +17,7 @@ import {
     IonFooter
 } from "@ionic/react";
 import UseApi from "./UseApi";
-import "../pages/home/Home.css";
+import "../pages/client/Client.css";
 
 const PutForm: React.FC = () => {
     

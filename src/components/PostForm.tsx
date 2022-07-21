@@ -22,7 +22,6 @@ import {
     IonAlert
 } from "@ionic/react";
 import UseApi from "./UseApi";
-import axios from "axios";
 
 
     const PostData: React.FC = () => {
@@ -48,7 +47,6 @@ import axios from "axios";
               localStorage.setItem("apiData", JSON.stringify(client.id+1))
             )
         })}
-        console.log()
       }
 
 
@@ -179,7 +177,3 @@ import axios from "axios";
         
     
     export default PostData;
-
-function getAxios(arg0: string, arg1: string) {
-  throw new Error("Function not implemented.");
-}

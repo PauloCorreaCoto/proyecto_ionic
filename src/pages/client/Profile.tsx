@@ -1,9 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItemDivider} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItemDivider, IonCard, IonCardHeader, IonCardSubtitle} from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useHistory, RouteComponentProps } from "react-router-dom";
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
-import { IonItem, IonLabel, IonAvatar } from '@ionic/react';
+import UseApi from '../../components/UseApi';
 
 interface ResetProps
   extends RouteComponentProps<{
@@ -11,20 +11,7 @@ interface ResetProps
   }> {}
 
 const Dashboard: React.FC<ResetProps> = ({ match }) => {
-  const history = useHistory();
-  const [users, setUsers] = useState<Array<any>>([]);
-  useEffect(() => {
-    const api = axios.create({
-        baseURL: `https://reqres.in/api`
-    })
-    api.get("/users")
-        .then(res => {             
-            setUsers(res.data.data)
-        })
-        .catch(error=>{
-            console.log("Error fetching data")
-        })
-  }, [])
+  const {data} = UseApi(`${process.env.REACT_APP_API_URL}/clients`);
   return (
     <IonPage>
       <IonHeader>
@@ -37,6 +24,7 @@ const Dashboard: React.FC<ResetProps> = ({ match }) => {
           <IonRow>
               <IonCol>
                   <h4>Welcome: {match.params.id}</h4>
+                  <h4>Your id is:  {localStorage.getItem("apiData")}</h4>
                   <IonItemDivider></IonItemDivider>
               </IonCol>
           </IonRow>

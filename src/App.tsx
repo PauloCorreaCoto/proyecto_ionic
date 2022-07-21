@@ -23,10 +23,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import PlateHome from './pages/platesHome/PlateHome';
 import Home from './pages/home/Home';
-import Client from './pages/client/Client';
-import Login from './pages/home/Login';
-import Dashboard from './pages/home/Profile';
-import Signup from './pages/client/Signup';
+import Login from './pages/client/Login';
+import Dashboard from './pages/client/Profile';
 
 
 setupIonicReact();
@@ -39,21 +37,19 @@ const App: React.FC = () => {
           <IonRouterOutlet id="main">
           <Route path="/login" component={Login} />
           <Redirect exact from="/" to="/login" />
+          <Route exact path="/" render={() => <Redirect to="/login" />} />
 
             <Route path="/PlateHome" exact={true}>
               <PlateHome />
             </Route>
-            <Route path="/Client" exact={true}>
-              <Client />
-            </Route>
+
             <Route path="/dashboard/:id" component={Dashboard} exact={true} />
-            <Route exact path="/" render={() => <Redirect to="/home" />} />
+
             <Route path="/Home" exact={true}>
               <Home />
             </Route>
-            <Route path="/Signup" exact={true}>
-              <Signup />
-            </Route>
+
+            
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>

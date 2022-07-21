@@ -27,6 +27,7 @@ import Client from './pages/client/Client';
 import Login from './pages/home/Login';
 import Dashboard from './pages/home/Profile';
 import Signup from './pages/client/Signup';
+import Order from './pages/order/Order';
 
 
 setupIonicReact();
@@ -45,6 +46,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/Client" exact={true}>
               <Client />
+            </Route>
+            <Route path="/Order" exact={true}>
+              <Order />
             </Route>
             <Route path="/dashboard/:id" component={Dashboard} exact={true} />
             <Route exact path="/" render={() => <Redirect to="/home" />} />

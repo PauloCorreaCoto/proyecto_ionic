@@ -16,8 +16,9 @@ import {
     IonItem,
     IonFooter
 } from "@ionic/react";
-import UseApi from "./UseApi";
+
 import "../pages/client/Client.css";
+import UseApi from "../UseApi";
 
 
 const DeleteData: React.FC = () => {

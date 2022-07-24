@@ -4,7 +4,9 @@ import axios from "axios";
 import { useHistory, RouteComponentProps } from "react-router-dom";
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
 import UseApi from '../../components/UseApi';
-import PutForm from '../../components/PutForm';
+
+import OrderPostForm from '../../components/orderForms/OrderPostForm';
+import PutForm from '../../components/orderForms/PutForm';
 
 interface ResetProps
   extends RouteComponentProps<{
@@ -13,6 +15,7 @@ interface ResetProps
 
 const Dashboard: React.FC<ResetProps> = ({ match }) => {
   const {data} = UseApi(`${process.env.REACT_APP_API_URL}/plates`);
+  
   return (
     <IonPage>
       <IonHeader>
@@ -37,8 +40,8 @@ const Dashboard: React.FC<ResetProps> = ({ match }) => {
                     return (
                         <IonCard className="Joke_Color" key={plate.id}>
                         <IonCardHeader>
-
-                            <IonCardSubtitle className="Joke_Category">Name: {plate?.name} - Price: {plate?.price}  </IonCardSubtitle>
+                            <IonCardSubtitle className="Joke_Category"><p>Plate Id: {plate?.id}</p> Name: {plate?.name} - Price: {plate?.price}</IonCardSubtitle>
+                            <OrderPostForm  />
                         </IonCardHeader>
                     </IonCard>
                     )

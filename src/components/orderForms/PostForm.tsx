@@ -21,7 +21,7 @@ import {
     IonCol,
     IonAlert
 } from "@ionic/react";
-import UseApi from "./UseApi";
+import UseApi from "../UseApi";
 
 
     const PostData: React.FC = () => {

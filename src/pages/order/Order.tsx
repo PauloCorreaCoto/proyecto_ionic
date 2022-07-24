@@ -51,7 +51,7 @@ const Order: React.FC = () => {
 
                         <IonCard className="Joke_Color" key={order.id}>
                         <IonCardHeader>
-                            <IonCardSubtitle className="Joke_Category">Fecha orden: {order?.order_date} | Status: {order?.status} | Orden ID: {order?.id}</IonCardSubtitle>
+                            <IonCardSubtitle className="Joke_Category">Fecha orden: {order?.order_date} | Status: {order?.status} | Orden ID: {order?.id} | Id Plato: {order?.plate.plate_id}</IonCardSubtitle>
                         </IonCardHeader>
                     </IonCard>
                     )

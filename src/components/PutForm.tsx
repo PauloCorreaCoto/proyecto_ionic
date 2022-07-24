@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     IonPage,
     IonHeader,
@@ -14,21 +14,23 @@ import {
     IonLabel,
     IonInput,
     IonItem,
-    IonFooter
+    IonFooter,
+    NavContext
 } from "@ionic/react";
 import UseApi from "./UseApi";
-import "../pages/client/Client.css";
+
 
 const PutForm: React.FC = () => {
     
     const [nameEdit, setNameEdit] = useState("");
-    const [idEdit, setIdEdit] = useState("");
-    const { data, UpdateData } = UseApi(`${process.env.REACT_APP_API_URL}/clients`); ; 
+    const { data, UpdateData } = UseApi(`${process.env.REACT_APP_API_URL}/clients`); 
+    const { navigate } = useContext(NavContext); 
 
     const handleEdit = () => {
-        UpdateData(`${idEdit}`, {name: nameEdit});
+        UpdateData(`${localStorage.getItem("apiData")}`, {name: nameEdit});
         setNameEdit("");
 
+        navigate("/dashboard/" + nameEdit)
     }
     return(
         <IonCardHeader>
@@ -36,14 +38,6 @@ const PutForm: React.FC = () => {
             <form onSubmit={handleEdit}>
 
                 <input
-                    className="Movie_Inputs"
-                    type="text"
-                    value={idEdit}
-                    placeholder='Id del cliente'
-                    onChange={(e) => setIdEdit(e.target.value)}                   
-                    />
-                    
-                    <input 
                         className="Movie_Inputs"
                         type="text"
                         value={nameEdit}
@@ -51,7 +45,7 @@ const PutForm: React.FC = () => {
                         onChange={(e) => setNameEdit(e.target.value)}                    
                     />
     
-                    <IonButton className="Joke_Refresh" color="success" type="submit"> Editar </IonButton>
+                    <IonButton className="Joke_Refresh" color="success" type="submit"> Edit client </IonButton>
                 </form>
             </IonCardHeader>
     

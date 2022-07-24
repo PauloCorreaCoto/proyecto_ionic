@@ -1,9 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItemDivider} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItemDivider, IonCard, IonCardHeader, IonCardSubtitle} from '@ionic/react';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useHistory, RouteComponentProps } from "react-router-dom";
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
-import { IonItem, IonLabel, IonAvatar } from '@ionic/react';
+import UseApi from '../../components/UseApi';
+import PutForm from '../../components/PutForm';
 
 interface ResetProps
   extends RouteComponentProps<{
@@ -11,20 +12,7 @@ interface ResetProps
   }> {}
 
 const Dashboard: React.FC<ResetProps> = ({ match }) => {
-  const history = useHistory();
-  const [users, setUsers] = useState<Array<any>>([]);
-  useEffect(() => {
-    const api = axios.create({
-        baseURL: `https://reqres.in/api`
-    })
-    api.get("/users")
-        .then(res => {             
-            setUsers(res.data.data)
-        })
-        .catch(error=>{
-            console.log("Error fetching data")
-        })
-  }, [])
+  const {data} = UseApi(`${process.env.REACT_APP_API_URL}/plates`);
   return (
     <IonPage>
       <IonHeader>
@@ -37,12 +25,24 @@ const Dashboard: React.FC<ResetProps> = ({ match }) => {
           <IonRow>
               <IonCol>
                   <h4>Welcome: {match.params.id}</h4>
+                  <h4>Your id is:  {localStorage.getItem("apiData")}</h4>
+                  <PutForm />
                   <IonItemDivider></IonItemDivider>
               </IonCol>
           </IonRow>
           <IonRow>
           </IonRow>
         </IonGrid>
+        {data?.map((plate: any) => {
+                    return (
+                        <IonCard className="Joke_Color" key={plate.id}>
+                        <IonCardHeader>
+
+                            <IonCardSubtitle className="Joke_Category">Name: {plate?.name} - Price: {plate?.price} - ID: {plate.id} </IonCardSubtitle>
+                        </IonCardHeader>
+                    </IonCard>
+                    )
+                })}
       </IonContent>
     </IonPage>
   );

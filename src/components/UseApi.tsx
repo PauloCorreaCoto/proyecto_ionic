@@ -34,9 +34,9 @@ function UseApi(url: any ){
         setLoading(true);
         axios
         .post(url, body, config)
-        .then((Response) => {setData(Response.data); })
+        .then((Response) => {setData(Response.data);})
         .catch((err) => {setError(err); })
-        .finally(() => {setLoading(false); });
+        .finally(() => {setLoading(false); })
     };
 
     const deleteData = (path: any) => {
@@ -47,7 +47,7 @@ function UseApi(url: any ){
             }
         };
     
-        axios.delete(`${url}/${path}`).then((Response) => {setData(Response.data); })
+        axios.delete(`${url}/${path}`).then((Response) => {setData(Response.data.id); })
         .catch((err) => {setError(err); })
         .finally(() => {setLoading(false); })
     };

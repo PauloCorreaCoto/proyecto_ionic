@@ -6,7 +6,7 @@ import { IonGrid, IonRow, IonCol } from '@ionic/react';
 import UseApi from '../../components/UseApi';
 
 import OrderPostForm from '../../components/orderForms/OrderPostForm';
-import PutForm from '../../components/orderForms/PutForm';
+import PutForm from '../../components/clientForms/PutForm';
 
 interface ResetProps
   extends RouteComponentProps<{

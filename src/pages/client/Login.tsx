@@ -4,7 +4,7 @@ import {
     IonContent
 } from "@ionic/react"
 import UseApi from "../../components/UseApi";
-import PostForm from "../../components/orderForms/PostForm";
+import PostForm from "../../components/clientForms/PostForm";
 
 const Settings = () => <IonPage>Settings</IonPage>;
 

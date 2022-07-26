@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import {
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonCard,
-    IonTitle,
-    IonContent,
-    IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
     IonButton,
     IonCardHeader,
-    IonLabel,
-    IonInput,
-    IonItem,
-    IonFooter
+
 } from "@ionic/react";
 import UseApi from "../UseApi";
-import "../pages/order/Order.css";
+import "../../pages/client/App.css"
 
 
 const DeleteData: React.FC = () => {
@@ -33,7 +21,7 @@ const DeleteData: React.FC = () => {
             <form onSubmit={handleDelete} >
 
                 <input 
-                className="Movie_Inputs"
+                className="Inputs"
                 type="text"
                 value={id}
                 placeholder= "Id de la orden"

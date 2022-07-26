@@ -1,8 +1,8 @@
-.Joke_Color {
+.Color {
     color: red;
 }
 
-.Joke_Category {
+.Plate {
     color: rgb(0, 0, 0);
 }
 
@@ -14,7 +14,7 @@
     background: rgb(0, 0, 0);
 }
 
-.Joke_Refresh {
+.Refresh {
     color: "success";
     background: teal;
     color: azure;
@@ -24,7 +24,7 @@
     color: black;
 }
 
-.Movie_Inputs{
+.Inputs{
     color: rgb(0, 0, 0);
     background-color: whitesmoke;
     padding-left: 0ch;

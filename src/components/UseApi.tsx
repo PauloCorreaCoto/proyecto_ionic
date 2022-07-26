@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { config } from "process";
-import { body } from "ionicons/icons";
+
 
 function UseApi(url: any ){
     const [data, setData] = useState<any>(null);

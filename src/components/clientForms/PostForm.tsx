@@ -1,27 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     IonPage,
     IonHeader,
     IonToolbar,
-    IonCard,
     IonTitle,
     IonContent,
-    IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
     IonButton,
-    IonCardHeader,
     IonLabel,
     IonInput,
     IonItem,
-    IonFooter,
     NavContext,
     IonGrid,
     IonRow,
     IonCol,
     IonAlert
 } from "@ionic/react";
-import UseApi from "./UseApi";
+import UseApi from "../UseApi";
 
 
     const PostData: React.FC = () => {
@@ -64,7 +58,7 @@ import UseApi from "./UseApi";
             }
         
             if (!password || password.length < 6) {
-                setMessage("Please enter your password");
+                setMessage("Please enter a valid password length");
                 setIserror(true);
                 return;
             }

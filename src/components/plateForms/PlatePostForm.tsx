@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from "react";
 import {
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonCard,
-    IonTitle,
-    IonContent,
-    IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
     IonButton,
     IonCardHeader,
-    IonLabel,
-    IonInput,
-    IonItem,
-    IonFooter
 } from "@ionic/react";
 import UseApi from "../UseApi";
-import "../../pages/platesHome/PlateHome.css";
+import "../../pages/client/App.css"
 
 const PostPlate: React.FC = () => {
     const {refetch} = UseApi(`${process.env.REACT_APP_API_URL}/plates`);
@@ -39,7 +26,7 @@ const PostPlate: React.FC = () => {
             <form onSubmit={handleSubmit} >
 
                 <input 
-                className="Movie_Inputs"
+                className="Inputs"
                 type="text"
                 value={name}
                 placeholder= "Nombre del plato"
@@ -47,7 +34,7 @@ const PostPlate: React.FC = () => {
                 />
 
                 <input 
-                className="Movie_Inputs"
+                className="Inputs"
                 type="text"
                 placeholder="Precio"                
                 onChange={(e) => setPrice(e.target.value)}                

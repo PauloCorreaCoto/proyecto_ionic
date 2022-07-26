@@ -1,4 +1,4 @@
-import { IonApp, IonLabel, IonRouterOutlet, IonSplitPane, IonTabBar, IonTabButton, setupIonicReact } from '@ionic/react';
+import { IonApp, IonLabel, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 
@@ -21,11 +21,8 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import PlateHome from './pages/platesHome/PlateHome';
-import Home from './pages/home/Home';
 import Login from './pages/client/Login';
 import Dashboard from './pages/client/Profile';
-import Order from './pages/order/Order';
 
 
 setupIonicReact();
@@ -40,18 +37,9 @@ const App: React.FC = () => {
           <Redirect exact from="/" to="/login" />
           <Route exact path="/" render={() => <Redirect to="/login" />} />
 
-            <Route path="/PlateHome" exact={true}>
-              <PlateHome />
-            </Route>
             <Route path="/dashboard/:id" component={Dashboard} exact={true} />
 
-            <Route path="/Home" exact={true}>
-              <Home />
-            </Route>
 
-            <Route path="/Order" exact={true}>
-              <Order />
-            </Route>
 
             
           </IonRouterOutlet>

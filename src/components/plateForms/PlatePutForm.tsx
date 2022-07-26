@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import {
-    IonPage,
-    IonHeader,
-    IonToolbar,
-    IonCard,
-    IonTitle,
-    IonContent,
-    IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
     IonButton,
     IonCardHeader,
-    IonLabel,
-    IonInput,
-    IonItem,
-    IonFooter
+
 } from "@ionic/react";
 import UseApi from "../UseApi";
-import "../../pages/platesHome/PlateHome.css";
+import "../../pages/client/App.css"
 
 
 const PutFormPlates: React.FC = () => {
@@ -37,7 +25,7 @@ const PutFormPlates: React.FC = () => {
             <form onSubmit={handleEdit}>
 
                 <input
-                    className="Movie_Inputs"
+                    className="Inputs"
                     type="text"
                     value={idEdit}
                     placeholder='Id del plato'
@@ -45,14 +33,14 @@ const PutFormPlates: React.FC = () => {
                     />
                     
                     <input 
-                        className="Movie_Inputs"
+                        className="Inputs"
                         type="text"
                         value={nameEdit}
                         placeholder="Nombre del plato"
                         onChange={(e) => setNameEdit(e.target.value)}                    
                     />
     
-                    <IonButton className="Joke_Refresh" color="success" type="submit"> Editar </IonButton>
+                    <IonButton className="Refresh" color="success" type="submit"> Editar </IonButton>
                 </form>
             </IonCardHeader>
     

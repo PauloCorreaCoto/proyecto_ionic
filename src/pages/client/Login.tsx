@@ -4,9 +4,7 @@ import {
     IonContent
 } from "@ionic/react"
 import UseApi from "../../components/UseApi";
-import PostForm from "../../components/PostForm";
-
-const Settings = () => <IonPage>Settings</IonPage>;
+import PostForm from "../../components/clientForms/PostForm";
 
 
 const Login: React.FC = () => {
